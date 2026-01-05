@@ -1,10 +1,18 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import StudySidebar from "@/components/study/StudySidebar.astro";
+
 const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <section>
-    <slot />
-  </section>
+  <div style="display:flex; gap:2rem;">
+    <aside>
+      <StudySidebar />
+    </aside>
+
+    <main>
+      <slot />
+    </main>
+  </div>
 </BaseLayout>
