@@ -1,11 +1,15 @@
-import { defineConfig } from "astro/config";
-import path from "node:path";
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
+// Add Vite alias config
 export default defineConfig({
+  integrations: [mdx()],
   vite: {
     resolve: {
       alias: {
-        "@": path.resolve(process.cwd(), "src"),
+        '@layouts': '/src/layouts',
+        '@components': '/src/components',
+        // Add other aliases as needed
       },
     },
   },
